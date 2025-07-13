@@ -5,12 +5,18 @@ class BookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 224,
-      width: 150,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .3,
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: Container(
+          decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('assets/images/Test_Book_Photo.png'),
+            ),
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
       ),
     );
   }
