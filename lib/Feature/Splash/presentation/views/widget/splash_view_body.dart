@@ -13,6 +13,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
+
   @override
   void initState() {
     animationController = AnimationController(
@@ -22,16 +23,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
             .animate(animationController);
-
-    animationController.forward();
-
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
+    animationController.forward();
   }
 
   @override
@@ -43,7 +36,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Image.asset(
           AssetsData.klogo,
         ),
-        SlideAnimateText(slidingAnimation: slidingAnimation)
+        SlideAnimateText(slidingAnimation: slidingAnimation),
       ],
     );
   }
