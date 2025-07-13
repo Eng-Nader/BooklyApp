@@ -14,7 +14,7 @@ class BookCardView extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) {
             return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(horizontal: 2),
               child: BookCard(),
             );
           },
