@@ -22,6 +22,36 @@ class HomeViewBody extends StatelessWidget {
             'Best Seller',
             style: Styles.titleMedium,
           ),
+          BookInfo(),
+        ],
+      ),
+    );
+  }
+}
+
+class BookInfo extends StatelessWidget {
+  const BookInfo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 190,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.7 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: const DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/images/Test_Book_Photo.png',
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
