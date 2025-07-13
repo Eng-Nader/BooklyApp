@@ -51,6 +51,22 @@ class BookInfo extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          const Column(
+            children: [
+              Text(
+                'BookTitle',
+                style: Styles.titleMedium,
+              ),
+              Text(
+                'SubTitle',
+                style: Styles.titleMedium,
+              ),
+              Text(
+                'BookAuthor',
+                style: Styles.titleMedium,
+              )
+            ],
           )
         ],
       ),
