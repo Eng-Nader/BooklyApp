@@ -80,7 +80,7 @@ flutter:
   fonts:
     - family:  Gt Sectra Fine 
       fonts:
-        - asset: fonts/GT Sectra Fine Regular.ttf/
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf
         
  
   # For details regarding fonts from package dependencies,
