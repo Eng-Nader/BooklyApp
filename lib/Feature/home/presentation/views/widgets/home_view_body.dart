@@ -1,4 +1,5 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_info.dart';
+import 'package:bookly_app/Feature/home/presentation/views/widgets/book_info_view.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_view.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/core/utils/styles.dart';
@@ -11,26 +12,33 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          BookCardView(),
-          SizedBox(
-            height: 50,
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: CustomAppBar(),
           ),
-          Text(
-            'Best Seller',
-            style: Styles.textStyle18,
+          SliverToBoxAdapter(
+            child: BookCardView(),
           ),
-          SizedBox(
-            height: 10,
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 50,
+            ),
           ),
-          BookInfo(),
+          SliverToBoxAdapter(
+            child: Text(
+              'Best Seller',
+              style: Styles.textStyle18,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10,
+            ),
+          ),
+          BookInfoView(),
         ],
       ),
     );
   }
 }
-
-
