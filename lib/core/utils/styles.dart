@@ -8,7 +8,6 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
   static const textStyle14 = TextStyle(
-    color: Colors.white,
     fontSize: 14,
     fontWeight: FontWeight.normal,
   );
@@ -26,6 +25,5 @@ abstract class Styles {
     color: Colors.white,
     fontSize: 20,
     fontWeight: FontWeight.normal,
-    fontFamily: kGtfont,
   );
 }
