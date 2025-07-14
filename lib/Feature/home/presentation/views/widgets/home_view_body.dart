@@ -23,6 +23,9 @@ class HomeViewBody extends StatelessWidget {
             'Best Seller',
             style: Styles.textStyle18,
           ),
+          SizedBox(
+            height: 10,
+          ),
           BookInfo(),
         ],
       ),
@@ -53,15 +56,24 @@ class BookInfo extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          const SizedBox(
+            width: 15,
+          ),
+          Column(
             children: [
-              Text(
-                'BookTitle',
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: const Text(
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  'Harry Potter and the Global of Fire',
+                  style: Styles.textStyle20,
+                ),
               ),
-              Text(
+              const Text(
                 'SubTitle',
               ),
-              Text(
+              const Text(
                 'BookAuthor',
               )
             ],
