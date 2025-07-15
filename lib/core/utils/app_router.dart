@@ -19,12 +19,13 @@ abstract class AppRouter {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-          path: khomeDetails,
-          pageBuilder: (context, state) {
-            return const CupertinoPage(
-              child: HomeDetails(),
-            );
-          }, )
+        path: khomeDetails,
+        pageBuilder: (context, state) {
+          return const CupertinoPage(
+            child: HomeDetails(),
+          );
+        },
+      ),
     ],
   );
 }

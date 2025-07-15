@@ -11,17 +11,12 @@ class BookCard extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .3,
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
-        child: GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(AppRouter.khomeDetails);
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/images/Test_Book_Photo.png'),
-              ),
-              borderRadius: BorderRadius.circular(16),
+        child: Container(
+          decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('assets/images/Test_Book_Photo.png'),
             ),
+            borderRadius: BorderRadius.circular(16),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/app_bar_details.dart';
+import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -8,44 +9,35 @@ class HomeDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          const AppBarDetials(),
-          const SizedBox(
+          AppBarDetials(),
+          SizedBox(
             height: 30,
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * .4,
-            width: MediaQuery.of(context).size.width * .5,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/Test_Book_Photo.png'),
-              ),
-            ),
-          ),
-          const Text(
+          BookCard(),
+          Text(
             'The Jungle Book',
             style: Styles.textStyle30,
           ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
-          const Text(
+          Text(
             'Ryad Clibic',
             style: Styles.textStyle16,
           ),
-          const BookRate(),
-          const SizedBox(
+          BookRate(),
+          SizedBox(
             height: 30,
           ),
-          const PriceBreview(),
-          const SizedBox(
+          PriceBreview(),
+          SizedBox(
             height: 20,
           ),
-          const BookDetailsView(),
+          BookDetailsView(),
         ],
       ),
     );
