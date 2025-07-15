@@ -1,5 +1,4 @@
 import 'package:bookly_app/Feature/Splash/presentation/views/widget/slide_animate_text.dart';
-import 'package:bookly_app/Feature/home/presentation/views/home_view.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
