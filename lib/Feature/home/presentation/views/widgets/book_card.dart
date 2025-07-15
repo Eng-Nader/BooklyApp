@@ -1,8 +1,6 @@
-import 'package:bookly_app/Feature/home/presentation/views/home_details.dart';
-import 'package:bookly_app/Feature/home/presentation/views/widgets/home_details_body.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({super.key});
@@ -15,10 +13,7 @@ class BookCard extends StatelessWidget {
         aspectRatio: 2.7 / 4,
         child: GestureDetector(
           onTap: () {
-            Get.to(
-              const HomeDetails(),
-              transition: Transition.rightToLeft,
-            );
+            GoRouter.of(context).push(AppRouter.khomeDetails);
           },
           child: Container(
             decoration: BoxDecoration(

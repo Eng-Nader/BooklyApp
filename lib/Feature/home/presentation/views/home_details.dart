@@ -7,7 +7,7 @@ class HomeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: HomeDetailsBody(),
+      body: SafeArea(child: HomeDetailsBody(), ),
     );
   }
 }
