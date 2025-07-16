@@ -9,22 +9,32 @@ class PriceBreview extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        PricePreviewBody(
-          text: '19.99',
-          backgroundColor: Colors.white,
-          textColor: Colors.black,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(16),
-            bottomLeft: Radius.circular(16),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(left: 16),
+            child: PricePreviewBody(
+              text: r'19.99 $',
+              backgroundColor: Colors.white,
+              textColor: Colors.black,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(16),
+              ),
+            ),
           ),
         ),
-        PricePreviewBody(
-          text: 'Preview',
-          backgroundColor: Colors.orange,
-          textColor: Colors.white,
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(16),
-            bottomRight: Radius.circular(16),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: PricePreviewBody(
+              text: 'Free Preview',
+              backgroundColor: Color(0xffEf8262),
+              textColor: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(16),
+              ),
+            ),
           ),
         ),
       ],

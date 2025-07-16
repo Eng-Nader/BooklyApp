@@ -4,7 +4,6 @@ import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dar
 import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widget/price_preview_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailsBody extends StatelessWidget {
@@ -50,8 +49,6 @@ class HomeDetailsBody extends StatelessWidget {
   }
 }
 
-
-
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({super.key});
 
@@ -59,23 +56,24 @@ class BookDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-          padding: EdgeInsets.zero,
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
-                  image: AssetImage(
-                    'assets/images/Test_Book_Photo.png',
-                  ),
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: const DecorationImage(
+                image: AssetImage(
+                  'assets/images/Test_Book_Photo.png',
                 ),
               ),
-            );
-          }),
+            ),
+          );
+        },
+      ),
     );
   }
 }
