@@ -12,56 +12,64 @@ class HomeDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          const AppBarDetials(),
-          const SizedBox(
-            height: 30,
-          ),
-          const BookCard(),
-          const Text(
-            'The Jungle Book',
-            style: Styles.textStyle30,
-          ),
-          const SizedBox(
-            height: 3,
-          ),
-          Text(
-            'Ryad Clibic',
-            style: Styles.textStyle18.copyWith(
-              fontFamily: kGtfont,
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                const AppBarDetials(),
+                const SizedBox(
+                  height: 30,
+                ),
+                const BookCard(),
+                const Text(
+                  'The Jungle Book',
+                  style: Styles.textStyle30,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  'Ryad Clibic',
+                  style: Styles.textStyle18.copyWith(
+                    fontFamily: kGtfont,
+                  ),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                const BookRate(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const PriceBreview(),
+                const Expanded(
+                  child: SizedBox(
+                    height: 100,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'You can also like ',
+                    style: Styles.textStyle16.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const BookDetailsView(),
+              ],
             ),
           ),
-          const SizedBox(
-            height: 3,
-          ),
-          const BookRate(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const PriceBreview(),
-          const SizedBox(
-            height: 100,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'You can also like ',
-              style: Styles.textStyle16.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const BookDetailsView(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
