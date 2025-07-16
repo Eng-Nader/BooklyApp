@@ -10,6 +10,7 @@ class AppBarDetials extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
       children: [
         IconButton(
           onPressed: () {

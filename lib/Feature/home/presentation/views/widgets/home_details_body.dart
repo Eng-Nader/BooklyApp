@@ -1,6 +1,7 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/app_bar_details.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
+import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -9,35 +10,53 @@ class HomeDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          AppBarDetials(),
-          SizedBox(
+          const AppBarDetials(),
+          const SizedBox(
             height: 30,
           ),
-          BookCard(),
-          Text(
+          const BookCard(),
+          const Text(
             'The Jungle Book',
             style: Styles.textStyle30,
           ),
-          SizedBox(
-            height: 5,
+          const SizedBox(
+            height: 3,
           ),
           Text(
             'Ryad Clibic',
-            style: Styles.textStyle16,
+            style: Styles.textStyle18.copyWith(
+              fontFamily: kGtfont,
+            ),
           ),
-          BookRate(),
-          SizedBox(
+          const BookRate(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          const SizedBox(
             height: 30,
           ),
-          PriceBreview(),
-          SizedBox(
-            height: 20,
+          const PriceBreview(),
+          const SizedBox(
+            height: 100,
           ),
-          BookDetailsView(),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'You More Like Book ',
+                  style: Styles.textStyle18,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                BookDetailsView(),
+              ],
+            ),
+          )
         ],
       ),
     );
@@ -49,43 +68,9 @@ class PriceBreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          height: 40,
-          width: 150,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Center(
-            child: Text(
-              r'19.99$',
-              style: Styles.textStyle18.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Container(
-          height: 40,
-          width: 150,
-          decoration: BoxDecoration(
-            color: Colors.orange,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Center(
-            child: Text(
-              'Free preview',
-              style: Styles.textStyle18.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ],
+      children: [],
     );
   }
 }

@@ -3,12 +3,14 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookRate extends StatelessWidget {
-  const BookRate({super.key});
+  const BookRate({super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         Image.asset(
           height: 20,
