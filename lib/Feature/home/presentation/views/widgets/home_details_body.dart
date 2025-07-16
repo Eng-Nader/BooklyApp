@@ -1,5 +1,6 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/app_bar_details.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
+import 'package:bookly_app/Feature/home/presentation/views/widgets/book_details_view.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
@@ -43,36 +44,23 @@ class HomeDetailsBody extends StatelessWidget {
             height: 30,
           ),
           const PriceBreview(),
-        ],
-      ),
-    );
-  }
-}
-
-class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Container(
+          const SizedBox(
             height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
-                image: AssetImage(
-                  'assets/images/Test_Book_Photo.png',
-                ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like ',
+              style: Styles.textStyle16.copyWith(
+                fontWeight: FontWeight.bold,
               ),
             ),
-          );
-        },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const BookDetailsView(),
+        ],
       ),
     );
   }
