@@ -1,8 +1,10 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/app_bar_details.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
+import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/core/widget/price_preview_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailsBody extends StatelessWidget {
@@ -32,6 +34,9 @@ class HomeDetailsBody extends StatelessWidget {
               fontFamily: kGtfont,
             ),
           ),
+          const SizedBox(
+            height: 3,
+          ),
           const BookRate(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
@@ -39,41 +44,13 @@ class HomeDetailsBody extends StatelessWidget {
             height: 30,
           ),
           const PriceBreview(),
-          const SizedBox(
-            height: 100,
-          ),
-          const Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'You More Like Book ',
-                  style: Styles.textStyle18,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                BookDetailsView(),
-              ],
-            ),
-          )
         ],
       ),
     );
   }
 }
 
-class PriceBreview extends StatelessWidget {
-  const PriceBreview({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [],
-    );
-  }
-}
 
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({super.key});
