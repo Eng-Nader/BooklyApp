@@ -31,7 +31,9 @@ abstract class AppRouter {
       GoRoute(
         path: ksearchView,
         pageBuilder: (context, state) {
-          return const CupertinoPage(child: SearchView());
+          return const CupertinoPage(
+            child: SearchView(),
+          );
         },
       )
     ],
