@@ -39,5 +39,3 @@ class PricePreviewBody extends StatelessWidget {
     );
   }
 }
-
- 
