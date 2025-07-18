@@ -8,11 +8,7 @@ class SearchTextFild extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: 'Search',
-        labelText: 'Search Book',
-        labelStyle: const TextStyle(
-          color: Colors.white,
-        ),
+        hintText: 'Search Book',
         suffixIcon: const Icon(
           color: Colors.white,
           size: 25,
