@@ -22,18 +22,16 @@ class HomeRepoImplement implements HomeRepo {
         );
       }
       return right(books);
+    } on DioException catch (e) {
+      return left(
+        ServerFaliure.fromDioException(e),
+      );
     } catch (e) {
-      if (e is DioException) {
-        return left(
-          ServerFaliure.fromDioException(e),
-        );
-      } else {
-        return left(
-          ServerFaliure(
-            e.toString(),
-          ),
-        );
-      }
+      return left(
+        ServerFaliure(
+          e.toString(),
+        ),
+      );
     }
   }
 
@@ -49,18 +47,16 @@ class HomeRepoImplement implements HomeRepo {
         );
       }
       return right(books);
+    } on DioException catch (e) {
+      return left(
+        ServerFaliure.fromDioException(e),
+      );
     } catch (e) {
-      if (e is DioException) {
-        return left(
-          ServerFaliure.fromDioException(e),
-        );
-      } else {
-        return left(
-          ServerFaliure(
-            e.toString(),
-          ),
-        );
-      }
+      return left(
+        ServerFaliure(
+          e.toString(),
+        ),
+      );
     }
   }
 }
