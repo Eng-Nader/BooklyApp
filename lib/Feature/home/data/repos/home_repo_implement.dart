@@ -29,15 +29,38 @@ class HomeRepoImplement implements HomeRepo {
         );
       } else {
         return left(
-          ServerFaliure('Opps, ther was an Eroor , try Again Later!'),
+          ServerFaliure(
+            e.toString(),
+          ),
         );
       }
     }
   }
 
   @override
-  Future<Either<Faliure, List<BookModel>>> fetchBookCard() {
-    // TODO: implement fetchBookCard
-    throw UnimplementedError();
+  Future<Either<Faliure, List<BookModel>>> fetchBookCard() async {
+    try {
+      Map<String, dynamic> data = await apiServers.get(
+          endPoint: '?Filtering=free-ebooks&startIndex=0&q=Subject:Flutter');
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(
+          BookModel.fromJson(item),
+        );
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFaliure.fromDioException(e),
+        );
+      } else {
+        return left(
+          ServerFaliure(
+            e.toString(),
+          ),
+        );
+      }
+    }
   }
 }
