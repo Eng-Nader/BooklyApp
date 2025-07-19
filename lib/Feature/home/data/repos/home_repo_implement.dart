@@ -10,7 +10,7 @@ class HomeRepoImplement implements HomeRepo {
 
   HomeRepoImplement(this.apiServers);
   @override
-  Future<Either<Faliure, List<BookModel>>> fetchNewestBook() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBook() async {
     try {
       Map<String, dynamic> data = await apiServers.get(
           endPoint:
@@ -36,7 +36,7 @@ class HomeRepoImplement implements HomeRepo {
   }
 
   @override
-  Future<Either<Faliure, List<BookModel>>> fetchBookCard() async {
+  Future<Either<Failure, List<BookModel>>> fetchBookCard() async {
     try {
       Map<String, dynamic> data = await apiServers.get(
           endPoint: '?Filtering=free-ebooks&startIndex=0&q=Subject:Flutter');
