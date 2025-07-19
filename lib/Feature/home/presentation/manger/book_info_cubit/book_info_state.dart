@@ -1,4 +1,4 @@
-part of 'book_infor_cubit.dart';
+part of 'book_info_cubit.dart';
 
 sealed class BookInforState extends Equatable {
   const BookInforState();
