@@ -23,9 +23,21 @@ class HomeRepoImplement implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFaliure());
+      if (e is DioException) {
+        return left(
+          ServerFaliure.fromDioException(e),
+        );
+      } else {
+        return left(
+          ServerFaliure('Opps, ther was an Eroor , try Again Later!'),
+        );
+      }
     }
   }
-  
-  
+
+  @override
+  Future<Either<Faliure, List<BookModel>>> fetchBookCard() {
+    // TODO: implement fetchBookCard
+    throw UnimplementedError();
+  }
 }
