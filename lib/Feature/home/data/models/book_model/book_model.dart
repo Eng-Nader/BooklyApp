@@ -25,7 +25,7 @@ class BookModel extends Equatable {
     this.searchInfo,
   });
 
-  factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
+  factory BookModel.fromJson(json) => BookModel(
         kind: json['kind'] as String?,
         id: json['id'] as String?,
         etag: json['etag'] as String?,
@@ -69,6 +69,3 @@ class BookModel extends Equatable {
     ];
   }
 }
-
-
-
