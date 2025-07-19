@@ -11,7 +11,10 @@ final class BookCardInitialState extends BookCardState {}
 
 final class BookCardLoadingState extends BookCardState {}
 
-final class BookCardSucessState extends BookCardState {}
+final class BookCardSucessState extends BookCardState {
+   final  List <BookModel> booksList ; 
+   const BookCardSucessState({required this.booksList}); 
+}
 
 final class BookCardFailureState extends BookCardState {
   final String errorMessage;
