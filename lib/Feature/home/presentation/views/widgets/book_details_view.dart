@@ -12,7 +12,10 @@ class BookDetailsView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BookCard();
+          return const BookCard(
+            imageUrl:
+                'https://i.pinimg.com/736x/68/e1/59/68e15971da05ec82c116fe191abb8c7f.jpg',
+          );
         },
       ),
     );

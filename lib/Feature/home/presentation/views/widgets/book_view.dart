@@ -19,12 +19,16 @@ class BookCardView extends StatelessWidget {
             height: 224,
             child: Expanded(
               child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: state.booksList.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 2),
-                    child: BookCard(bookModel: state.booksList[index]),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: BookCard(
+                      imageUrl: state
+                          .booksList[index].volumeInfo.imageLinks.thumbnail,
+                    ),
                   );
                 },
               ),

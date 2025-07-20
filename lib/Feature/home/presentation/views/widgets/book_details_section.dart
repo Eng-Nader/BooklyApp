@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        const BookCard(),
+        const BookCard(
+          imageUrl: 'https://i.pinimg.com/736x/68/e1/59/68e15971da05ec82c116fe191abb8c7f.jpg',
+        ),
         const Text(
           'The Jungle Book',
           style: Styles.textStyle30,
