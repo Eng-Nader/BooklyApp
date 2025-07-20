@@ -9,8 +9,8 @@ class CustomLoadingIndcator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 130,
-        width: 130,
+        height: 150,
+        width: 150,
         child: Lottie.asset(AssetsData.kIndicator),
       ),
     );
