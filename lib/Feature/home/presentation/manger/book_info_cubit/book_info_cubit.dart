@@ -11,10 +11,13 @@ class BookInforCubit extends Cubit<BookInforState> {
   Future<void> getInfoBook() async {
     emit(BookInfoLoadingState());
     var result = await homeRepo.fetchNewestBook();
-    result.fold((failure) {
-      emit(BookInfoFailureState(errorMessage: failure.errorMessage));
-    }, (booksInfo) {
-      emit(BookInfoSuceessState(bookInfo: booksInfo));
-    });
+    result.fold(
+      (failure) {
+        emit(BookInfoFailureState(errorMessage: failure.errorMessage));
+      },
+      (booksInfo) {
+        emit(BookInfoSuceessState(bookInfo: booksInfo));
+      },
+    );
   }
 }
