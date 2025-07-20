@@ -20,6 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     initSlidingAnimation();
     navigateHomeView();
+   
   }
 
   @override

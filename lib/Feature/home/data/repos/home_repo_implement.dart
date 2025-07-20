@@ -13,8 +13,9 @@ class HomeRepoImplement implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewestBook() async {
     try {
       Map<String, dynamic> data = await apiServers.get(
-          endPoint:
-              '?Sorting=newest&Filtering=free-ebooks&startIndex=0&q=Subject:Flutter');
+        endPoint:
+            'https://www.googleapis.com/books/v1/volumes?Sorting=newest&Filtering=free-ebooks&startIndex=0&q=Subject:Flutter',
+      );
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(
@@ -39,7 +40,9 @@ class HomeRepoImplement implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchBookCard() async {
     try {
       Map<String, dynamic> data = await apiServers.get(
-          endPoint: '?Filtering=free-ebooks&startIndex=0&q=Subject:Flutter');
+        endPoint:
+            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=flutter',
+      );
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(

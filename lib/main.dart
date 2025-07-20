@@ -3,6 +3,7 @@ import 'package:bookly_app/Feature/home/presentation/manger/book_card_cubit/book
 import 'package:bookly_app/Feature/home/presentation/manger/book_info_cubit/book_info_cubit.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/bloc_boserver_implent.dart';
 import 'package:bookly_app/core/utils/servers_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +14,7 @@ void main() {
   runApp(
     const BooklyApp(),
   );
+  Bloc.observer = BlocBoserverImplent();
 }
 
 class BooklyApp extends StatelessWidget {
@@ -25,7 +27,7 @@ class BooklyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => BookCardCubit(
             getit.get<HomeRepoImplement>(),
-          ),
+          )..getBookCard(),
         ),
         BlocProvider(
           create: (context) => BookInforCubit(
