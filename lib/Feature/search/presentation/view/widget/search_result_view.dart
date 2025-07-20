@@ -9,7 +9,7 @@ class SearchResultView extends StatelessWidget {
     return SliverList.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BookInfo();
+        return const SizedBox();
       },
     );
   }

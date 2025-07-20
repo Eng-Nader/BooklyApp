@@ -14,7 +14,7 @@ class HomeRepoImplement implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiServers.get(
         endPoint:
-            'https://www.googleapis.com/books/v1/volumes?Sorting=newest&Filtering=free-ebooks&startIndex=0&q=Subject:Flutter',
+            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=cookies',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -41,7 +41,7 @@ class HomeRepoImplement implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiServers.get(
         endPoint:
-            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=flutter',
+            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=cookies',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
