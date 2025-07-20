@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/utils/custom_loading_indcator.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookCard extends StatelessWidget {
@@ -12,15 +14,15 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .3,
-      child: AspectRatio(
-        aspectRatio: 2.7 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(imageUrl),
-            ),
-            borderRadius: BorderRadius.circular(16),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: AspectRatio(
+          aspectRatio: 2.7 / 4,
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: imageUrl,
+            placeholder: (context, url) => const CustomLoadingIndcator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
       ),

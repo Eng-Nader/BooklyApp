@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -8,9 +9,9 @@ class CustomLoadingIndcator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 200,
-        width: 200,
-        child: Lottie.asset('assets/images/Glow loading.json'),
+        height: 150,
+        width: 150,
+        child: Lottie.asset(AssetsData.kIndicator),
       ),
     );
   }
