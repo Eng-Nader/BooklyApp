@@ -19,10 +19,13 @@ class HomeDetailsBody extends StatelessWidget {
                 BookDetailsSection(),
                 Expanded(
                   child: SizedBox(
-                    height: 100,
+                    height: 70,
                   ),
                 ),
-                SimilarBooksSection(),
+                SizedBox(
+                  height: 200,
+                  child: SimilarBooksSection(),
+                ),
               ],
             ),
           ),

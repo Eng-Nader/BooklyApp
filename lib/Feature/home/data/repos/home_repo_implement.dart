@@ -54,4 +54,28 @@ class HomeRepoImplement implements HomeRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimlirBook(
+      {required String categories}) async {
+    try {
+      Map<String, dynamic> data = await apiServers.get(
+        endPoint:
+            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=programing&Sorting=relevance',
+      );
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(
+          BookModel.fromJson(item),
+        );
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFaliure.fromDioException(e));
+      } else {
+        return left(ServerFaliure(e.toString()));
+      }
+    }
+  }
 }
