@@ -35,8 +35,10 @@ class BookCardView extends StatelessWidget {
             ),
           );
         } else if (state is BookCardFailureState) {
-          return CustomErrorWidget(
-            errorMessage: state.errorMessage,
+          return Center(
+            child: CustomErrorWidget(
+              errorMessage: state.errorMessage,
+            ),
           );
         } else {
           return const CustomLoadingIndcator();

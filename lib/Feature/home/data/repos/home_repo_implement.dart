@@ -10,38 +10,11 @@ class HomeRepoImplement implements HomeRepo {
 
   HomeRepoImplement(this.apiServers);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewestBook() async {
-    try {
-      Map<String, dynamic> data = await apiServers.get(
-        endPoint:
-            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=cookies',
-      );
-      List<BookModel> books = [];
-      for (var item in data['items']) {
-        books.add(
-          BookModel.fromJson(item),
-        );
-      }
-      return right(books);
-    } on DioException catch (e) {
-      return left(
-        ServerFaliure.fromDioException(e),
-      );
-    } catch (e) {
-      return left(
-        ServerFaliure(
-          e.toString(),
-        ),
-      );
-    }
-  }
-
-  @override
   Future<Either<Failure, List<BookModel>>> fetchBookCard() async {
     try {
       Map<String, dynamic> data = await apiServers.get(
         endPoint:
-            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=cookies',
+            'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=programing',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -50,16 +23,35 @@ class HomeRepoImplement implements HomeRepo {
         );
       }
       return right(books);
-    } on DioException catch (e) {
-      return left(
-        ServerFaliure.fromDioException(e),
-      );
     } catch (e) {
-      return left(
-        ServerFaliure(
-          e.toString(),
-        ),
+      if (e is DioException) {
+        return left(ServerFaliure.fromDioException(e));
+      } else {
+        return left(ServerFaliure(e.toString()));
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchNewestBook() async {
+    try {
+      Map<String, dynamic> data = await apiServers.get(
+        endPoint:
+            'https://www.googleapis.com/books/v1/volumes?&Filtering=free-ebooks&Sorting=Newest&startIndex=0&q=flutter',
       );
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(
+          BookModel.fromJson(item),
+        );
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFaliure.fromDioException(e));
+      } else {
+        return left(ServerFaliure(e.toString()));
+      }
     }
   }
 }

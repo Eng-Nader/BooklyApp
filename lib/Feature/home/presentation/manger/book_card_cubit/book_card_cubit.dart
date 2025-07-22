@@ -15,9 +15,13 @@ class BookCardCubit extends Cubit<BookCardState> {
 
     var result = await homeRepo.fetchBookCard();
     result.fold((failure) {
-      emit(BookCardFailureState(errorMessage: failure.errorMessage));
+      emit(
+        BookCardFailureState(errorMessage: failure.errorMessage),
+      );
     }, (booksCard) {
-      emit(BookCardSucessState(booksList: booksCard));
+      emit(
+        BookCardSucessState(booksList: booksCard),
+      );
     });
   }
 }

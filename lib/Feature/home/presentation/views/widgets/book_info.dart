@@ -18,7 +18,7 @@ class BookInfo extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.khomeDetails);
       },
       child: SizedBox(
-        height: 140,
+        height: 150,
         width: MediaQuery.of(context).size.width * .4,
         child: Row(
           children: [
@@ -43,7 +43,9 @@ class BookInfo extends StatelessWidget {
                 ),
                 Text(
                   maxLines: 3,
-                  bookModel.volumeInfo.authors![0],
+                  bookModel.volumeInfo.authors?.isNotEmpty == true
+                      ? bookModel.volumeInfo.authors![0]
+                      : 'UnKnown Author',
                   overflow: TextOverflow.ellipsis,
                   style: Styles.textStyle14,
                 ),
@@ -58,7 +60,7 @@ class BookInfo extends StatelessWidget {
                     const SizedBox(
                       width: 40,
                     ),
-                     BookRate(
+                    BookRate(
                       book: bookModel,
                     ),
                   ],
@@ -71,4 +73,3 @@ class BookInfo extends StatelessWidget {
     );
   }
 }
-

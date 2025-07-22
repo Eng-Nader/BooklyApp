@@ -1,5 +1,4 @@
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
-import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
