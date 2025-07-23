@@ -2,7 +2,6 @@ import 'package:bookly_app/Feature/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/Functions/lauch_url.dart';
 import 'package:bookly_app/core/widget/price_preview_body.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class PriceBreview extends StatelessWidget {
   const PriceBreview({super.key, required this.bookModel});
