@@ -26,10 +26,7 @@ class HomeDetailsBody extends StatelessWidget {
                     height: 70,
                   ),
                 ),
-                const SizedBox(
-                  height: 200,
-                  child: SimilarBooksSection(),
-                ),
+                const SimilarBooksSection(),
               ],
             ),
           ),

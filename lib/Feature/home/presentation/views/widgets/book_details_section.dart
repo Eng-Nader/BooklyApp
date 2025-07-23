@@ -4,7 +4,6 @@ import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dar
 import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -21,12 +20,13 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * .3,
           child: BookCard(
-            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail , 
           ),
         ),
         Text(
-          bookModel.volumeInfo.title!,
+          bookModel.volumeInfo.title ?? '',
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 3,

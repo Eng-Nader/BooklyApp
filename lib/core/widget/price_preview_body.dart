@@ -16,23 +16,21 @@ class PricePreviewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-        height: 48,
-        child: TextButton(
-          onPressed: () {},
-          style: TextButton.styleFrom(
-            backgroundColor: backgroundColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: borderRadius,
-            ),
+    return SizedBox(
+      height: 48,
+      child: TextButton(
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: borderRadius,
           ),
-          child: Text(
-            text,
-            style: Styles.textStyle18.copyWith(
-              color: textColor,
-              fontWeight: FontWeight.bold,
-            ),
+        ),
+        child: Text(
+          text,
+          style: Styles.textStyle18.copyWith(
+            color: textColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
