@@ -6,12 +6,13 @@ import 'package:equatable/equatable.dart';
 part 'search_cubit_state.dart';
 
 class SearchCubit extends Cubit<SearchCubitState> {
-  SearchCubit(this.searchHomeRepo) : super(SearchCubitInitialState());
-  final SearchHomeRepo searchHomeRepo;
+  SearchCubit(this.searchRepo) : super(SearchCubitInitialState());
+  final SearchRepo searchRepo;
+ 
 
-  Future<void> searchBook({required String bookname}) async {
+  Future<void> searchBook({required String bookName}) async {
     emit(SearchCubitLoadingState());
-    var result = await searchHomeRepo.getSearchBook(bookName: bookname);
+    var result = await searchRepo.getSearchBook(bookName: bookName);
     result.fold(
       (failure) {
         emit(SearchCubitFailureState(failure.errorMessage));

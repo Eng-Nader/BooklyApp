@@ -5,10 +5,10 @@ import 'package:bookly_app/core/utils/api_servers.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class SearchRepoImplement implements SearchHomeRepo {
+class SearchRepoImplement implements SearchRepo {
   final ApiServers apiServers;
 
-  SearchRepoImplement({required this.apiServers});
+  SearchRepoImplement( this.apiServers);
   @override
   Future<Either<Failure, List<BookModel>>> getSearchBook(
       {required String bookName}) async {
@@ -17,7 +17,7 @@ class SearchRepoImplement implements SearchHomeRepo {
             'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&startIndex=0&q=Subject:$bookName');
     List<BookModel> searchBook = [];
     try {
-      for (var item in data['item']) {
+      for (var item in data['items']) {
         searchBook.add(BookModel.fromJson(item));
       }
       return right(searchBook);
