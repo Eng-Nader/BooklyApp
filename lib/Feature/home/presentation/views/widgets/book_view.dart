@@ -18,7 +18,7 @@ class BookCardView extends StatelessWidget {
       builder: (context, state) {
         if (state is BookCardSucessState) {
           return SizedBox(
-            height: 200,
+            height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,

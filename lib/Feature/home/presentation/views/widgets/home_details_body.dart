@@ -14,7 +14,7 @@ class HomeDetailsBody extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
                 const AppBarDetials(),

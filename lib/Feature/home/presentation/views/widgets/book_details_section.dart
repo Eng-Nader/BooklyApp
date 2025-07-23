@@ -1,8 +1,8 @@
 import 'package:bookly_app/Feature/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/Feature/home/presentation/views/widgets/book_card.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/book_rate.dart';
 import 'package:bookly_app/Feature/home/presentation/views/widgets/price_priview.dart';
 import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/utils/custom_book_image.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -12,16 +12,20 @@ class BookDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         const SizedBox(
-          height: 30,
+          height: 10,
         ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * .3,
-          child: BookCard(
-            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail , 
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * .26),
+          child: CustomBookImage(
+            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
           ),
+        ),
+        const SizedBox(
+          height: 10,
         ),
         Text(
           bookModel.volumeInfo.title ?? '',
@@ -31,12 +35,15 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 3,
         ),
-        Text(
-          bookModel.volumeInfo.authors?.isNotEmpty == true
-              ? bookModel.volumeInfo.authors![0]
-              : 'UnKnown Author',
-          style: Styles.textStyle18.copyWith(
-            fontFamily: kGtfont,
+        Opacity(
+          opacity: .7,
+          child: Text(
+            bookModel.volumeInfo.authors?.isNotEmpty == true
+                ? bookModel.volumeInfo.authors![0]
+                : 'UnKnown Author',
+            style: Styles.textStyle18.copyWith(
+              fontFamily: kGtfont,
+            ),
           ),
         ),
         const SizedBox(
@@ -47,7 +54,7 @@ class BookDetailsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
         const PriceBreview(),
       ],
