@@ -37,7 +37,7 @@ class HomeRepoImplement implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiServers.get(
         endPoint:
-            'https://www.googleapis.com/books/v1/volumes?&Filtering=free-ebooks&Sorting=Newest&startIndex=0&q=flutter',
+            'https://www.googleapis.com/books/v1/volumes?&Filtering=free-ebooks&Sorting=Newest&startIndex=0&q=c#',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {

@@ -16,8 +16,9 @@ class _HomeDetailsViewState extends State<HomeDetailsView> {
   @override
   void initState() {
     BlocProvider.of<SimilarBookCubit>(context).getSimilarBook(
-      categories: widget.book.volumeInfo.categories![0],
-    );
+        categories: widget.book.volumeInfo.categories?.isNotEmpty == true
+            ? widget.book.volumeInfo.categories![0]
+            : 'Flutter');
     super.initState();
   }
 

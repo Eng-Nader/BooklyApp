@@ -8,11 +8,13 @@ class PricePreviewBody extends StatelessWidget {
     required this.backgroundColor,
     required this.textColor,
     required this.borderRadius,
+    required this.onPressed,
   });
   final String text;
   final Color backgroundColor;
   final Color textColor;
   final BorderRadius borderRadius;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class PricePreviewBody extends StatelessWidget {
       child: SizedBox(
         height: 48,
         child: TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: TextButton.styleFrom(
             backgroundColor: backgroundColor,
             shape: RoundedRectangleBorder(
