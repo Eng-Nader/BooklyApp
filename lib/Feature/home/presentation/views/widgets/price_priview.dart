@@ -1,4 +1,5 @@
 import 'package:bookly_app/Feature/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/utils/Functions/lauch_url.dart';
 import 'package:bookly_app/core/widget/price_preview_body.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,13 +26,13 @@ class PriceBreview extends StatelessWidget {
             ),
           ),
           PricePreviewBody(
-            onPressed: () async {
-              Uri url = Uri.parse(bookModel.volumeInfo.previewLink!);
-              if (await canLaunchUrl(url)) {
-                launchUrl(url);
-              }
+            onPressed: () {
+              getLaunchUrl(
+                bookModel.volumeInfo.previewLink!,
+                context,
+              );
             },
-            text: 'Free Preview',
+            text: getPreview(bookModel),
             backgroundColor: const Color(0xffEf8262),
             textColor: Colors.white,
             borderRadius: const BorderRadius.only(
@@ -42,5 +43,13 @@ class PriceBreview extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+String getPreview(BookModel bookModel) {
+  if (bookModel.volumeInfo.previewLink == null) {
+    return 'Not Avalible';
+  } else {
+    return 'Free Preview';
   }
 }
